@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Infrastructure-As-Code-Platform/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Infrastructure-As-Code-Platform?style=flat-square" alt="GitHub stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Infrastructure-As-Code-Platform/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Infrastructure-As-Code-Platform?style=flat-square" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Infrastructure-As-Code-Platform/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Infrastructure-As-Code-Platform?style=flat-square" alt="GitHub forks"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Infrastructure-As-Code-Platform/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Infrastructure-As-Code-Platform?style=flat-square" alt="License"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Infrastructure-As-Code-Platform/commits/main"><img src="https://img.shields.io/github/last-commit/ishandutta2007/Awesome-Infrastructure-As-Code-Platform?style=flat-square" alt="Last Commit"/></a>
@@ -60,7 +60,7 @@ The table below details commercial hosted platforms providing remote state, run 
 
 ## 🔓 Open-Source GitHub Projects
 
-Below are top open-source engines, CLI tools, wrappers, scanners, and pull-request bots. Repositories are sorted by **GitHub Star Count Descending**.
+Below are top open-source engines, CLI tools, wrappers, scanners, and pull-request bots. Repositories are sorted by **GitHub Stars_Count Descending**.
 
 1. ⭐ **[LocalStack](https://github.com/localstack/localstack)** [![Stars](https://img.shields.io/github/stars/localstack/localstack?style=social&color=white)](https://github.com/localstack/localstack/stargazers)  
    Fully functional local AWS cloud stack for offline IaC testing & local cloud development.
