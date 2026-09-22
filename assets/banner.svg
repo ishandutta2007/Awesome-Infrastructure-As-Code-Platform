@@ -1,103 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="1200" height="350">
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117" />
-      <stop offset="50%" stop-color="#161b22" />
-      <stop offset="100%" stop-color="#090d16" />
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a10" />
     </linearGradient>
 
-    <!-- Glowing Accent Gradients -->
+    <!-- Accent Gradients -->
     <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.8" />
-      <stop offset="50%" stop-color="#2563eb" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
     </linearGradient>
 
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a78bfa" />
-      <stop offset="50%" stop-color="#60a5fa" />
-      <stop offset="100%" stop-color="#38bdf8" />
+      <stop offset="0%" stop-color="#c4b5fd" />
+      <stop offset="50%" stop-color="#93c5fd" />
+      <stop offset="100%" stop-color="#67e8f9" />
     </linearGradient>
 
-    <!-- Filters for Glow -->
+    <!-- Glow Filter -->
     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feGaussianBlur stdDeviation="6" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <filter id="soft-shadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.6" />
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5" />
     </filter>
   </defs>
 
   <style>
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.05); }
+    @keyframes pulseOpacity {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 0.75; }
     }
-    @keyframes flowLine {
-      0% { stroke-dashoffset: 100; }
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 40; }
       100% { stroke-dashoffset: 0; }
     }
-    @keyframes floatParticle {
+    @keyframes floatCard {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-8px); }
     }
-    @keyframes nodePulse {
-      0%, 100% { r: 4px; fill-opacity: 0.6; }
-      50% { r: 7px; fill-opacity: 1; }
-    }
-
     .bg { fill: url(#bg-grad); }
-    .glow-orb-1 { animation: pulseGlow 8s infinite ease-in-out; transform-origin: 200px 100px; }
-    .glow-orb-2 { animation: pulseGlow 10s infinite ease-in-out 2s; transform-origin: 1000px 250px; }
-    
-    .grid-line { stroke: #30363d; stroke-width: 1; opacity: 0.25; }
-    .connection-line {
+    .grid-line { stroke: #1f2937; stroke-width: 1; opacity: 0.4; }
+    .flow-path {
       stroke: url(#primary-glow);
-      stroke-width: 2;
+      stroke-width: 2.5;
       stroke-dasharray: 8 6;
-      animation: flowLine 15s linear infinite;
+      animation: dashMove 3s linear infinite;
     }
-
-    .particle { animation: floatParticle 6s ease-in-out infinite; }
-    .node { animation: nodePulse 3s ease-in-out infinite; }
+    .glow-circle-1 { animation: pulseOpacity 6s ease-in-out infinite; }
+    .glow-circle-2 { animation: pulseOpacity 8s ease-in-out 2s infinite; }
+    .floating-group { animation: floatCard 5s ease-in-out infinite; }
     
-    .title-text {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 42px;
+    .title-main {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 40px;
       font-weight: 800;
       fill: #ffffff;
       letter-spacing: -0.5px;
     }
-    .gradient-subtitle {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      font-size: 20px;
+    .subtitle-main {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 18px;
       font-weight: 600;
       fill: url(#text-grad);
       letter-spacing: 0.5px;
     }
-    .desc-text {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    .desc-line {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 14px;
-      fill: #8b949e;
+      fill: #9ca3af;
     }
-    .badge-bg { fill: #21262d; stroke: #30363d; rx: 12px; }
-    .badge-text { font-family: monospace; font-size: 12px; fill: #58a6ff; font-weight: bold; }
   </style>
 
-  <!-- Background -->
-  <rect class="bg" width="1200" height="350" rx="16" />
+  <!-- Background Card -->
+  <rect class="bg" width="1200" height="350" rx="16" stroke="#1f2937" stroke-width="2" />
 
-  <!-- Animated Background Orbs -->
-  <circle class="glow-orb-1" cx="200" cy="100" r="150" fill="#7c3aed" filter="url(#glow)" opacity="0.4" />
-  <circle class="glow-orb-2" cx="1000" cy="250" r="180" fill="#0284c7" filter="url(#glow)" opacity="0.3" />
+  <!-- Animated Glowing Orbs -->
+  <circle class="glow-circle-1" cx="180" cy="90" r="140" fill="#7c3aed" filter="url(#glow)" opacity="0.4" />
+  <circle class="glow-circle-2" cx="1020" cy="260" r="160" fill="#0284c7" filter="url(#glow)" opacity="0.3" />
 
-  <!-- Grid Pattern overlay -->
+  <!-- Grid Lines -->
   <g class="grid-lines">
     <line x1="0" y1="70" x2="1200" y2="70" class="grid-line" />
     <line x1="0" y1="140" x2="1200" y2="140" class="grid-line" />
@@ -110,58 +100,63 @@
     <line x1="1000" y1="0" x2="1000" y2="350" class="grid-line" />
   </g>
 
-  <!-- Dynamic Infrastructure Graph Lines (Background Layer) -->
-  <path d="M 100 280 L 250 200 L 450 250 L 650 180 L 850 240 L 1050 150" class="connection-line" />
-  <path d="M 150 100 L 350 160 L 550 110 L 750 190 L 950 100 L 1100 200" class="connection-line" />
+  <!-- Flowing Infrastructure Network Lines -->
+  <path d="M 80 270 L 240 190 L 460 240 L 680 160 L 880 230 L 1100 140" class="flow-path" fill="none" />
+  <path d="M 160 110 L 380 170 L 580 120 L 780 190 L 980 110" class="flow-path" fill="none" />
 
-  <!-- Dynamic Graph Nodes -->
-  <circle cx="250" cy="200" fill="#38bdf8" class="node" />
-  <circle cx="450" cy="250" fill="#a78bfa" class="node" />
-  <circle cx="650" cy="180" fill="#34d399" class="node" />
-  <circle cx="850" cy="240" fill="#f472b6" class="node" />
-  <circle cx="350" cy="160" fill="#60a5fa" class="node" />
-  <circle cx="750" cy="190" fill="#fbbf24" class="node" />
-
-  <!-- Floating Decorative Cards (Background / Right Side) -->
-  <g class="particle" transform="translate(860, 50)" filter="url(#soft-shadow)">
-    <rect width="260" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
-    <circle cx="25" cy="35" r="12" fill="#238636" opacity="0.3" />
-    <circle cx="25" cy="35" r="6" fill="#2ea043" />
-    <text x="50" y="32" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e6edf3">Terraform / OpenTofu</text>
-    <text x="50" y="50" font-family="monospace" font-size="11" fill="#7d8590">Drift Detection: Active</text>
+  <!-- SMIL Animated Dynamic Nodes -->
+  <g>
+    <circle cx="240" cy="190" r="5" fill="#38bdf8">
+      <animate attributeName="r" values="4;7;4" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="460" cy="240" r="5" fill="#a78bfa">
+      <animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="680" cy="160" r="5" fill="#34d399">
+      <animate attributeName="r" values="4;7;4" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="880" cy="230" r="5" fill="#f472b6">
+      <animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite" />
+    </circle>
   </g>
 
-  <g class="particle" transform="translate(890, 140)" filter="url(#soft-shadow)">
-    <rect width="240" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
-    <circle cx="25" cy="35" r="12" fill="#1f6beb" opacity="0.3" />
-    <circle cx="25" cy="35" r="6" fill="#388bfd" />
-    <text x="50" y="32" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e6edf3">Policy-as-Code (OPA)</text>
-    <text x="50" y="50" font-family="monospace" font-size="11" fill="#7d8590">Status: Enforced (100%)</text>
+  <!-- Interactive Infrastructure Cards (Right Side) -->
+  <g class="floating-group" transform="translate(850, 45)" filter="url(#card-shadow)">
+    <rect width="280" height="68" rx="10" fill="#111827" stroke="#374151" stroke-width="1.5" />
+    <circle cx="28" cy="34" r="7" fill="#10b981" />
+    <text x="50" y="31" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f3f4f6">Terraform &amp; OpenTofu</text>
+    <text x="50" y="49" font-family="monospace" font-size="11" fill="#9ca3af">Drift Monitoring: Active</text>
   </g>
 
-  <g class="particle" transform="translate(840, 230)" filter="url(#soft-shadow)">
-    <rect width="270" height="70" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
-    <circle cx="25" cy="35" r="12" fill="#8957e5" opacity="0.3" />
-    <circle cx="25" cy="35" r="6" fill="#a371f7" />
-    <text x="50" y="32" font-family="sans-serif" font-size="13" font-weight="bold" fill="#e6edf3">TACOS & CI/CD Orchestration</text>
-    <text x="50" y="50" font-family="monospace" font-size="11" fill="#7d8590">State & Plan Automation</text>
+  <g class="floating-group" transform="translate(875, 135)" filter="url(#card-shadow)">
+    <rect width="260" height="68" rx="10" fill="#111827" stroke="#374151" stroke-width="1.5" />
+    <circle cx="28" cy="34" r="7" fill="#3b82f6" />
+    <text x="50" y="31" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f3f4f6">Policy as Code (OPA)</text>
+    <text x="50" y="49" font-family="monospace" font-size="11" fill="#9ca3af">Governance: Enforced</text>
   </g>
 
-  <!-- FOREGROUND CONTENT: Title & Subtitle (Completely clear and crisp) -->
-  <g transform="translate(70, 70)" filter="url(#soft-shadow)">
-    <!-- Category Pill -->
-    <rect class="badge-bg" x="0" y="0" width="230" height="28" />
-    <text class="badge-text" x="15" y="18">⚡ AWESOME IaC PLATFORMS</text>
-
-    <!-- Main Title -->
-    <text class="title-text" x="0" y="75">Infrastructure as Code</text>
-    <text class="gradient-subtitle" x="0" y="112">COMPREHENSIVE ECOSYSTEM & PLATFORM DIRECTORY</text>
-
-    <!-- Description -->
-    <text class="desc-text" x="0" y="148">Curated SaaS Platforms, Open-Source Engines, Policy Governance,</text>
-    <text class="desc-text" x="0" y="168">Drift Detection & Multi-Cloud CI/CD Automation (TACOS).</text>
+  <g class="floating-group" transform="translate(830, 225)" filter="url(#card-shadow)">
+    <rect width="300" height="68" rx="10" fill="#111827" stroke="#374151" stroke-width="1.5" />
+    <circle cx="28" cy="34" r="7" fill="#8b5cf6" />
+    <text x="50" y="31" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f3f4f6">TACOS Automation Platform</text>
+    <text x="50" y="49" font-family="monospace" font-size="11" fill="#9ca3af">CI/CD &amp; State Management</text>
   </g>
 
-  <!-- Bottom Accent Line -->
+  <!-- Foreground Content: Title & Text -->
+  <g transform="translate(60, 75)">
+    <!-- Badge Pill -->
+    <rect x="0" y="0" width="225" height="28" rx="14" fill="#1f2937" stroke="#374151" stroke-width="1" />
+    <text x="14" y="18" font-family="monospace" font-size="11" font-weight="bold" fill="#60a5fa">⚡ AWESOME IaC PLATFORMS</text>
+
+    <!-- Main Heading -->
+    <text class="title-main" x="0" y="72">Infrastructure as Code</text>
+    <text class="subtitle-main" x="0" y="106">COMPREHENSIVE ECOSYSTEM &amp; PLATFORM DIRECTORY</text>
+
+    <!-- Detailed Subtext -->
+    <text class="desc-line" x="0" y="144">Curated SaaS Platforms, Open-Source Engines, Policy Governance,</text>
+    <text class="desc-line" x="0" y="164">Drift Detection &amp; Multi-Cloud CI/CD Automation (TACOS).</text>
+  </g>
+
+  <!-- Bottom Accent Bar -->
   <rect x="0" y="344" width="1200" height="6" fill="url(#primary-glow)" />
 </svg>
