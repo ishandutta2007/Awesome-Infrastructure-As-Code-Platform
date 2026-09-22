@@ -60,7 +60,7 @@ The table below details commercial hosted platforms providing remote state, run 
 
 ## 🔓 Open-Source GitHub Projects
 
-Below are top open-source engines, CLI tools, wrappers, scanners, and pull-request bots. Repositories are sorted by **GitHub Stars_Count Descending**.
+Below are top open-source engines, CLI tools, wrappers, scanners, and pull-request bots. Repositories are sorted by **GitHub_Stars_Count Descending**.
 
 1. ⭐ **[LocalStack](https://github.com/localstack/localstack)** [![Stars](https://img.shields.io/github/stars/localstack/localstack?style=social&color=white)](https://github.com/localstack/localstack/stargazers)  
    Fully functional local AWS cloud stack for offline IaC testing & local cloud development.
